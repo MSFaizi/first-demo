@@ -144,9 +144,9 @@ Step-15: Go to ansible server
 - cd /sourcecode
 - vi deployment.yml \
 Note: Vi editor will be open, mention below line as it is
-- - name: Pic file from source and push into destination \
-    hosts: webserver \
-    tasks: \
+- -name: Pic file from source and push into destination \
+   hosts: webserver \
+   tasks: \
     - copy: \
         src: /opt/index.html \
         dest: /var/www/html \
