@@ -16,13 +16,24 @@ Step-3:  Set the name of all servers in Putty with their proper name as given in
 - sudo su 
 - yum update -y \
 Note: Run these command in all 4 servers \
+
 Step-4: Jenkins server
 - amazon-linux-extras install java-openjdk11 -y
 - wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
 - rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
-- yum install jenkins -y
+- yum install jenkins -y \
+- systemctl start jenkins
 
+Ste-5: ansible server
+- amazon-linux-extras install epel -y [epel provide easy access to install commonly used pakages on centos]
+- yum install ansible -y
+- ansible --version
 
+Step-6: web-server
+- yum install httpd -y
+- systemctl start httpd
+- systemctl status httpd
+- 
 
 
 
