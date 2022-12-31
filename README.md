@@ -8,12 +8,12 @@ Step-1: Create four servers in AWS and mention the name as shown in below pic
 ![image](https://user-images.githubusercontent.com/102685509/210143860-27d06b2f-b26d-46bd-befe-fb8572db40af.png)
 
 Step-2: Take SSH connection of these all 4 servers Via Putty \
-Step-3:  Set the name of all servers in Putty with their proper name as given in AWS, It will help to recognize server with their name, run bellow command \
-- ec2-user
+Step-3:  Set the name of all servers in Putty with their proper name as given in AWS, It will help to recognize server with their name, run bellow command 
+\- ec2-user
 - sudo su
 - hostnamectl set-hostname [server name]
 - exit
-- sudo su
+- sudo su \
 Note: Run these command in all 4 servers
 
 
