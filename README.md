@@ -15,7 +15,7 @@ Step-3:  Set the name of all servers in Putty with their proper name as given in
 - exit
 - sudo su 
 - yum update -y \
-Note: Run these command in all 4 servers \
+Note: Run these command in all 4 servers 
 
 Step-4: Jenkins server
 - amazon-linux-extras install java-openjdk11 -y
@@ -23,6 +23,12 @@ Step-4: Jenkins server
 - rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
 - yum install jenkins -y 
 - systemctl start jenkins
+- systemctl enable jenkins \
+Note: Go to AWS console and copy public IP address of jenkins-server and paste in browser with :8080 port. It will ask for Administrator password. Copy path
+- cat [paste copied path] \
+Note: Password will be displayed on screen, copy and paste in jenkins browser Administrator password field and continue. \
+Click on Install suggested plugins
+- yum install git -y
 
 Ste-5: ansible server
 - amazon-linux-extras install epel -y [epel provide easy access to install commonly used pakages on centos]
@@ -33,6 +39,17 @@ Step-6: web-server
 - yum install httpd -y
 - systemctl start httpd
 - systemctl status httpd
+- passwd root \
+Note: Set your password here
+- vi /etc/ssh/sshd_config \
+Note: Vi editor page will be open. Find and correct bellow points
+- uncomment/enable PermitRootLogin yes
+- change PasswordAuthentication 'no' to 'yes' \
+Note: Come out from editor using below command
+- press ESC button then
+
+Step-7: dev-server
+- yum install git -y
 - 
 
 
