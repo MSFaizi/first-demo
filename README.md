@@ -78,9 +78,9 @@ Note: First time it will ask for password, give password what we had set earlier
 - ssh root@[private IP of web-server]
 - exit 
 - vi /etc/ansible/hosts \
-Note: Vi editor will be open, mention below line as it is \
+Note: Vi editor will be open, mention below line as it is, just above ex 2\
 [webserver] \
-private IP of web-server /
+private IP of web-server 
 
 Go to step-7 dev-server
 
