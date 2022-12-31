@@ -180,6 +180,15 @@ Note: Vi editor will be open, write below html code
 
 ![image](https://user-images.githubusercontent.com/102685509/210155334-908ff521-2bfa-422d-8445-d28b16434b5c.png)
 
+Save and exit from vi editor
+- git add .
+- git commit -m "html code updated" index.html
+- git config --global user.email "codingmywork@gmail.com"
+- git config --global user.name "MSFaizi"
+- git commit -m "html code updated" index.html
+- git push -u -f origin main 
+- usernamer[put github username and password]
+
 
 
 
