@@ -40,7 +40,8 @@ Note: Come out from editor using below command
 - press ESC button then
 - :wq
 - systemctl restart sshd
-- systemctl status sshd
+- systemctl status sshd \
+Go to Step-5
 - ssh-keygen \
 Leave blank all
 - ssh-copy-id -i root@[ansible-server private IP] \
@@ -68,7 +69,8 @@ Leave blank all
 - ssh-copy-id -i root@[web-server private IP] \
 Note: First time it will ask for password, give password what we had set earlier. And then we can access web-server in ansible-server only. Just to check the same go through bellow command 
 - ssh root@[private IP of web-server]
-- exit
+- exit \
+Go to Jenkins-server Serial line no-45
 - vi /etc/ansible/hosts \
 Note: Vi editor will be open, mention below line as it is \
 [webserver] \
