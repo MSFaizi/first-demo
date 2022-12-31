@@ -40,14 +40,18 @@ Note: Come out from editor using below command
 - press ESC button then
 - :wq
 - systemctl restart sshd
-- systemctl status sshd \
-Go to Step-5
+- systemctl status sshd 
+- 
+Go to Step-5 ansible-server (Complete below steps after step-6 completion)
+
 - ssh-keygen \
 Leave blank all
 - ssh-copy-id -i root@[ansible-server private IP] \
 Note: First time it will ask for password, give password what we had set earlier. And then we can access ansible-server in jenkins-server only. Just to check the same go through bellow command 
 - ssh root@[private IP of ansible server]
-- exit
+- exit 
+- 
+Go to Step-5, from where we had left (basically keygen part)
 
 Ste-5: ansible server
 - amazon-linux-extras install epel -y [epel provide easy access to install commonly used pakages on centos]
@@ -63,18 +67,22 @@ Note: Come out from editor using below command
 - press ESC button then
 - :wq
 - systemctl restart sshd
-- systemctl status sshd
+- systemctl status sshd 
+- 
+Go to Step-6 web-server (complete below steps after step-4 completion)
+
 - ssh-keygen \
 Leave blank all
 - ssh-copy-id -i root@[web-server private IP] \
 Note: First time it will ask for password, give password what we had set earlier. And then we can access web-server in ansible-server only. Just to check the same go through bellow command 
 - ssh root@[private IP of web-server]
-- exit \
-Go to Jenkins-server Serial line no-45
+- exit 
 - vi /etc/ansible/hosts \
 Note: Vi editor will be open, mention below line as it is \
 [webserver] \
-private IP of web-server
+private IP of web-server /
+
+Go to step-7 dev-server
 
 Step-6: web-server
 - yum install httpd -y
@@ -89,7 +97,9 @@ Note: Vi editor page will be open. Find and correct bellow points
 Note: Come out from editor using below command
 - press ESC button then
 - :wq
-- systemctl restart sshd
+- systemctl restart sshd 
+- 
+Go to step-4 jenkins-server, Where we had left in-between
 
 Step-7: dev-server
 - yum install git -y 
