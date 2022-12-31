@@ -154,6 +154,37 @@ In 'content type' - choose 'application/json' \
 Step-18: For secret field, go to Jenkins Dashboard \
 Under 'User' - choose Configure - Scroll to 'API Token'  \
 Add new Token -> Generate \
-Copy Token and paste it to Github 'secret' field 
+Copy Token and paste it to Github 'secret' field  \
+Click on 'Add webhook' 
+
+Step-19: Jenkins dashboard -> demo-project -> Configure -> Build Triggers - Chose Github hook trigger for GITScm polling \
+Apply & Save
+
+Congratulation All done
+
+Just copy web-server public IP and paste in browser
+
+You will get 'Hi' which we had written in html file in github
+
+Just do some changes in your html code and directly see changes in browser, Jenkins will do all CICD and deploy it to browser
+
+We have created CICD successfully using Git, Github, Jenkins, Ansible and many more
+
+Step-20: Go to dev-server
+- git clone [repository URL]
+- ls
+- cd first-demo
+- ls
+- vi index.html \
+Note: Vi editor will be open, write below html code
+
+![image](https://user-images.githubusercontent.com/102685509/210155334-908ff521-2bfa-422d-8445-d28b16434b5c.png)
+
+
+
+
+
+
+
 
 
