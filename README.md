@@ -118,9 +118,9 @@ Password - Give password which we had set in jenkins server \
 Click on 'Test Configuration', If correct it will display 'success' \
 Click on apply \
 Click on add \
-Name - Ansible
-Hostname - private IP of ansible-server
-username - root
+Name - Ansible \
+Hostname - private IP of ansible-server \
+username - root \
 Click on Advance -  Tick on Use password authentication \
 Password - Give password which we had set in ansible server \
 Click on 'Test Configuration', If correct it will display 'success' \
