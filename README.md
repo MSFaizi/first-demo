@@ -134,7 +134,7 @@ rsync -avh /var/lib/jenkins/workspace/demo-project/*.html root@privateIPofAnsibl
 Click on Apply \
 Under 'Post-build Actions' \
 Choose 'Send build artifacts over SSH' \
-Under name select 'Jenkins' \
+Under name select 'Ansible' \
 Under 'Exec Command' mention below line as it is \
 ansible-playbook /sourcecode/deployment.yml \
 Apply & Save \ 
