@@ -150,6 +150,8 @@ Note: Vi editor will be open, mention below line as it is
     - copy: \
         src: /opt/index.html \
         dest: /var/www/html \
+        ![image](https://user-images.githubusercontent.com/102685509/210156902-bff37178-c426-4b39-8210-8fe15cf075b5.png)
+
 Save and exit from vi editor using below command \
 Click 'ESC' button and then
 -:wq \
