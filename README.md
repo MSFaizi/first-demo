@@ -90,10 +90,70 @@ Note: Come out from editor using below command
 - systemctl restart sshd
 
 Step-7: dev-server
-- yum install git -y
-- 
+- yum install git -y 
 
+Step-8: Create one repo, under that create a file,  name it as index.html and simply mention 'Hi' in this page \
+Step-9: Go to jenkins web page Dashboard \
+Step-10: Create one job/item, give name as 'demo-project' choose freestyle project \
+Step-11: Dashboard -> demo-project -> Source Code Management -> choose Git and paste URL of github Repo -> Apply and Save \
+Step-12: Dashboard -> Manage Jenkins -> Plugin Manager -> Available plugins -> Search for SSH -> Choose 'Public Over SSH' -> Install and restart \
+Step-13: Dashboard -> Manage Jenkins -> Configure System -> Scroll Below, we can find SSH Servers -> Click on Add \
+Name - Jenkins \
+Hostname - private IP of Jenkins \
+Username - root \
+Click on advance - Tick on Use password authentication \
+Password - Give password which we had set in jenkins server \
+Click on 'Test Configuration', If correct it will display 'success' \
+Click on apply \
+Click on add \
+Name - Ansible
+Hostname - private IP of ansible-server
+username - root
+Click on Advance -  Tick on Use password authentication \
+Password - Give password which we had set in ansible server \
+Click on 'Test Configuration', If correct it will display 'success' \
+Click on apply  & Save \
+Step-14: Dashboard -> demo-project -> Configure -> Scroll Down to Build Steps  \
+Click on Add build step -> choose 'Send files or execute commands over SSH' \
+Under 'Name' two options available there Ansible & Jenkins \
+Select Jenkins \
+Under 'Exec Command' mention below line as it is \
+rsync -avh /var/lib/jenkins/workspace/demo-project/*.html root@privateIPofAnsible:/opt/index.html \
+Click on Apply \
+Under 'Post-build Actions' \
+Choose 'Send build artifacts over SSH' \
+Under name select 'Jenkins' \
+Under 'Exec Command' mention below line as it is \
+ansible-playbook /sourcecode/deployment.yml \
+Apply & Save \ 
 
+Step-15: Go to ansible server 
+- mkdir /sourcecode
+- cd /sourcecode
+- vi deployment.yml \
+Note: Vi editor will be open, mention below line as it is
+- name: Pic file from source and push into destination \
+  hosts: webserver \
+  tasks: \
+    - copy: \
+        src: /opt/index.html \
+        dest: /var/www/html \
+Save and exit from vi editor using below command \
+Click 'ESC' button and then
+-:wq \
+Step-16: Go to web-server
+- cd /var/www/html
+- pwd
+- ls \
+Note: No file and folder \ 
 
+Step-17: Go to github -> first-demo repo \
+Settings -> Webhooks -> Add Webhook \
+In the field of 'payload URL' - paste jenkins web URL/github-webhook/ \
+In 'content type' - choose 'application/json' \
+Step-18: For secret field, go to Jenkins Dashboard \
+Under 'User' - choose Configure - Scroll to 'API Token'  \
+Add new Token -> Generate \
+Copy Token and paste it to Github 'secret' field 
 
 
