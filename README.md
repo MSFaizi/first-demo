@@ -8,7 +8,7 @@ Step-1: Create four servers in AWS and mention the name as shown in below pic
 
 ![image](https://user-images.githubusercontent.com/102685509/210143860-27d06b2f-b26d-46bd-befe-fb8572db40af.png)
 
-Step-2: Take SSH connection of these all 4 servers Via Putty
+Step-2: Take SSH connection of these all 4 servers Via Putty \
 Step-3:  
 
 
